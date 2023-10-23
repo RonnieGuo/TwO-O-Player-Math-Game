@@ -1,13 +1,15 @@
+require_relative 'io_handler'
+
 class Game
   def initialize(player)
     @player = player
   end
 
   def start
-    puts "What's your name?"
-    @player.name = gets.chomp
+    IOHandler.display("What's your name?")
+    @player.name = IOHandler.get_input
 
-    puts "Welcome, #{@player.name}! Let's begin the adventure."
+    IOHandler.display("Welcome, #{@player.name}! Let's begin the adventure.")
     # Implement the game logic here
   end
 end
